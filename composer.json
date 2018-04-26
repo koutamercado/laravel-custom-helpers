@@ -1,0 +1,31 @@
+{
+    "name": "koutamercado/laravel-custom-helpers",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Carlos Mercado",
+            "email": "koutamercado@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "koutamercado\\laravelCustomHelpers\\": ""
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "koutamercado\\laravelCustomHelpers\\Tests": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "5.5.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7"
+    }
+}
