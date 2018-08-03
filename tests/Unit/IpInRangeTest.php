@@ -14,7 +14,6 @@ class IpInRangeTest extends TestCase
      */
     public function ipTest()
     {
-        ddd("");
         if (ipInRange('10.0.0.50', '10.0.0.0/24')) {
             ddd('10.0.0.50 esta dentro de 10.0.0.0/24');
         } else {
