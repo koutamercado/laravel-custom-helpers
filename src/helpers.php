@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Debug\Dumper;
+use Symfony\Component\VarDumper\VarDumper;
 
 if (! function_exists('ddd')) {
     /**
@@ -12,7 +12,7 @@ if (! function_exists('ddd')) {
     function ddd(...$args)
     {
         foreach ($args as $x) {
-            (new Dumper)->dump($x);
+            VarDumper::dump($x);
         }
     }
 }
