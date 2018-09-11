@@ -19,8 +19,5 @@ class DDDTest extends TestCase
 
         echo "function 'ddd': \n";
         ddd($x, $y);
-        
-        echo "function 'dd': \n";
-        dd($x, $y);
     }
 }
