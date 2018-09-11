@@ -23,9 +23,12 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0.0",
-        "illuminate/support": ">=5.0"
+        "symfony/var-dumper": "~4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6|^7"
+    },
+    "suggest": {
+        "symfony/var-dumper": "Required to use the ddd function (~4.0)."
     }
 }
