@@ -38,3 +38,67 @@ if (! function_exists('ipInRange')) {
         return ( ( $ip_decimal & $netmask_decimal ) == ( $range_decimal & $netmask_decimal ) );
     }
 }
+
+if (!function_exists('checkUuid')) {
+    /**
+     * Verifico el formato de un String para ver si es un UUID
+     *
+     * @param  string $uuid
+     * @return bool
+     */
+    function checkUuid($uuid)
+    {
+        $reg = '/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/';
+        if (!is_string($uuid) || (preg_match($reg, $uuid) !== 1)) {
+            return false;
+        }
+        return true;
+    }
+}
+
+if (!function_exists('nlToBr')) {
+    /**
+     * Convierto los saltos de linea a la etiqueta br
+     *
+     * @param  string $string
+     * @return string
+     */
+    function nlToBr($string)
+    {
+        if (strstr($string, "\r\n")) {
+            $string = str_replace("\r\n", "<br>", $string);
+        }
+
+        if (strstr($string, "\n")) {
+            $string = str_replace("\n", "<br>", $string);
+        }
+
+        if (strstr($string, "\r")) {
+            $string = str_replace("\r", "<br>", $string);
+        }
+
+        return $string;
+    }
+}
+
+if (!function_exists('dosToUnix')) {
+    /**
+     * Limpio los saltos de linea distintos a \n
+     *
+     * @param  string $string
+     * @return string
+     */
+    function dosToUnix($string)
+    {
+        if (strstr($string, "\r\n")) {
+            $string = str_replace("\r\n", "\n", $string);
+        }
+        if (strstr($string, "\r")) {
+            $string = str_replace("\r", "\n", $string);
+        }
+        if (strstr($string, "^M")) {
+            $string = str_replace("^M", "\n", $string);
+        }
+        return $string;
+    }
+}
